@@ -8,10 +8,15 @@ import ec.edu.ups.clase.empleado;
 import ec.edu.ups.clase.inventario;
 import ec.edu.ups.clase.seccion;
 import ec.edu.ups.clase.socio;
+import ec.edu.ups.clase.sucursal;
 import ec.edu.ups.controlador.ControladorSocio;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 /**
  *
  * @author Estudiante
@@ -19,6 +24,53 @@ import java.util.Scanner;
 public class Menu {
     public static void main(String []args)
     {
+        
+        //Compara una misma clase
+        seccion sec=new seccion();
+        sec.setNombre("sec");
+        sec.setCodigo(12);
+        seccion sec1=new seccion();
+        sec1.setNombre("sec1");
+        sec1.setCodigo(12);
+        
+        if(sec.equals(sec1))
+            System.out.println("Son iguales");
+        else 
+            System.out.println("No son iguales");
+        
+        
+        //Compara dos diferentes clases
+        sucursal s=new sucursal();
+        s.setCodigo(12);
+        if(sec.equals(s))
+            System.out.println("Son iguales");
+        else
+            System.out.println("No son iguales");
+        
+        
+        //Utilizacion del HashCode
+        Set<seccion> lista=new HashSet<>();
+        lista.add(sec);
+        lista.add(sec1);
+        
+        for(seccion seccion:lista){
+            System.out.println("Seccion: "+sec.getNombre());
+        }
+        
+        if(lista.contains(sec1))
+            System.out.println("Si existe");
+        
+        //Para comparar dos string, mayor a 0 si es mayor, menor a 0 si es menor e igual a0 son iguales
+        System.out.println("Pepito".compareTo("Pepito"));
+        
+        //ordenar con set
+        SortedSet<seccion>listaOrdenada =new TreeSet<>();
+        listaOrdenada.add(sec1);
+        listaOrdenada.add(sec);
+        System.out.println("Lista ordenada");
+        for(seccion seccion: listaOrdenada)
+            System.out.println(seccion.getNombre());
+        
         int opc, opc1;
         Scanner x=new Scanner(System.in);
         do
@@ -124,6 +176,7 @@ public class Menu {
                         System.out.println("2. Read");
                         System.out.println("3. Update");
                         System.out.println("4. Delete");
+                        System.out.println("5. Imprimir");
                         System.out.print("Elija una opción: ");
                         opc1=x.nextInt();
                         switch(opc1)
@@ -136,8 +189,10 @@ public class Menu {
                                 break;
                             case 4:
                                 break;
+                            case 5:
+                                break;
                         }
-                    }while(opc1<5 && opc1>0);
+                    }while(opc1<6 && opc1>0);
                     System.out.println("");
                     break;
                 case 3:
@@ -165,7 +220,7 @@ public class Menu {
                     break;
                 case 4: 
                     do{
-                        seccion sec=new seccion();
+                        seccion secc=new seccion();
                         System.out.println("1. Create");
                         System.out.println("2. Read");
                         System.out.println("3. Update");

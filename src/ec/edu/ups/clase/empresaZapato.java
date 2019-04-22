@@ -11,7 +11,7 @@ package ec.edu.ups.clase;
  * @since 2019
  * @author Jose Tapia
  */
-public class empresaZapato {
+public class empresaZapato implements Comparable<empresaZapato> {
     private String nombre;
     private int codigo;
     private double ingreso;
@@ -68,4 +68,39 @@ public class empresaZapato {
     public String toString() {
         return "empresaZapato{" + "nombre=" + nombre + ", codigo=" + codigo + ", ingreso=" + ingreso + ", nacional=" + nacional + '}';
     }    
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 67 * hash + this.codigo;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final empresaZapato other = (empresaZapato) obj;
+        if (this.codigo != other.codigo) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int compareTo(empresaZapato o) {
+        if(nombre.compareTo(o.getNombre())>=1)
+            return 1;
+        if(nombre.compareTo(o.getNombre())<=-1)
+            return -1;
+        else
+            return 0;
+    }
 }

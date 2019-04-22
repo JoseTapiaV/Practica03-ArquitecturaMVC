@@ -5,6 +5,7 @@
  */
 package ec.edu.ups.controlador;
 
+import ec.edu.ups.clase.seccion;
 import ec.edu.ups.clase.socio;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,32 +14,29 @@ import java.util.List;
  *
  * @author Estudiante
  */
-public class ControladorSocio {
-    private List<socio> lista;
-    private int contador=0;
-
-    public ControladorSocio(){
+public class ControladorSeccion {
+    private List<seccion> lista;
+    
+    public ControladorSeccion(){
         lista=new ArrayList<>();
     }
     
-    public void create(socio objeto){
-        lista.set(contador, objeto);
-        contador=contador+1;
-        //lista.add(objeto);
+    public void create(seccion objeto){
+        lista.add(objeto);
     }
     
-    public socio read(int codigo){
-        for(socio ControladorSocio : lista){
-            if (ControladorSocio.getCodigo()==codigo)
-                return ControladorSocio;
+    public seccion read(int codigo){
+        for(seccion ControladorSeccion:lista){           
+            if (ControladorSeccion.getCodigo()==codigo)
+                return ControladorSeccion;
         }
         return null;
     }
     
-    public void update(socio objeto){
+    public void update(seccion objeto){
         for(int i=0; i<lista.size(); i++){
-            socio elemento=lista.get(i);
-            if(elemento.getCodigo()==objeto.getCodigo()){
+            seccion elemento=lista.get(i);
+            if(elemento.equals(objeto)){
                 lista.set(i, objeto);
                 break;
             }
@@ -47,9 +45,9 @@ public class ControladorSocio {
     
     public void delete(int codigo){
         for(int i=0; i<lista.size(); i++){
-            socio elemento=lista.get(i);
-            if(elemento.getCodigo()==codigo){
-                lista.remove(i);
+            seccion elemento=lista.get(i);
+            if(elemento.equals(elemento)){
+                lista.remove(elemento);
                 break;
             }
         }
