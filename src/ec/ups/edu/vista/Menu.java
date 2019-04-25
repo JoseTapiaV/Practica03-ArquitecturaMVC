@@ -30,7 +30,7 @@ public class Menu {
     {
         
         //Compara una misma clase
-        Seccion sec=new Seccion();
+        /*Seccion sec=new Seccion();
         sec.setNombre("sec");
         sec.setCodigo(12);
         Seccion sec1=new Seccion();
@@ -74,6 +74,7 @@ public class Menu {
         System.out.println("Lista ordenada");
         for(Seccion seccion: listaOrdenada)
             System.out.println(seccion.getNombre());
+        */
         
         int opc, opc1;
         Scanner x=new Scanner(System.in);
