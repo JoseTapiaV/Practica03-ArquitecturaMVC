@@ -11,21 +11,21 @@ package ec.edu.ups.clase;
  * @since 2019
  * @author Jose Tapia
  */
-public class empresaZapato implements Comparable<empresaZapato> {
+public class EmpresaZapato implements Comparable<EmpresaZapato> {
     private String nombre;
     private int codigo;
     private double ingreso;
     private String nacional;
 
-    public empresaZapato() {
+    public EmpresaZapato() {
     }
 
-    public empresaZapato(String nombre, int codigo) {
+    public EmpresaZapato(String nombre, int codigo) {
         this.nombre = nombre;
         this.codigo = codigo;
     }
 
-    public empresaZapato(String nombre, int codigo, double ingreso, String nacional) {
+    public EmpresaZapato(String nombre, int codigo, double ingreso, String nacional) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.ingreso = ingreso;
@@ -66,7 +66,7 @@ public class empresaZapato implements Comparable<empresaZapato> {
     
     @Override
     public String toString() {
-        return "empresaZapato{" + "nombre=" + nombre + ", codigo=" + codigo + ", ingreso=" + ingreso + ", nacional=" + nacional + '}';
+        return "EmpresaZapato{" + "nombre=" + nombre + ", codigo=" + codigo + ", ingreso=" + ingreso + ", nacional=" + nacional + '}';
     }    
 
     @Override
@@ -87,7 +87,7 @@ public class empresaZapato implements Comparable<empresaZapato> {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final empresaZapato other = (empresaZapato) obj;
+        final EmpresaZapato other = (EmpresaZapato) obj;
         if (this.codigo != other.codigo) {
             return false;
         }
@@ -95,12 +95,7 @@ public class empresaZapato implements Comparable<empresaZapato> {
     }
 
     @Override
-    public int compareTo(empresaZapato o) {
-        if(nombre.compareTo(o.getNombre())>=1)
-            return 1;
-        if(nombre.compareTo(o.getNombre())<=-1)
-            return -1;
-        else
-            return 0;
+    public int compareTo(EmpresaZapato o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

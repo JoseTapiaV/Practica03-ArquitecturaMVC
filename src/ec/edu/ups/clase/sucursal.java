@@ -13,20 +13,20 @@ import ec.edu.ups.interfaces.Acciones;
  * @since 2019
  * @author Jose Tapia
  */
-public class sucursal extends empresaZapato implements Acciones{
+public class Sucursal extends EmpresaZapato implements Acciones{
     private String direccion;
     private int cantidad; 
     private int telefono;
     private String ciudad;
 
-    public sucursal() {
+    public Sucursal() {
     }
 
-    public sucursal(String nombre, int codigo) {
+    public Sucursal(String nombre, int codigo) {
         super(nombre, codigo);
     }
 
-    public sucursal(String direccion, int cantidad, int telefono, String ciudad, String nombre, int codigo, double ingreso, String nacional) {
+    public Sucursal(String direccion, int cantidad, int telefono, String ciudad, String nombre, int codigo, double ingreso, String nacional) {
         super(nombre, codigo, ingreso, nacional);
         this.direccion = direccion;
         this.cantidad = cantidad;

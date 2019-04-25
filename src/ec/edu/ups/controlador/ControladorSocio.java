@@ -5,39 +5,38 @@
  */
 package ec.edu.ups.controlador;
 
-import ec.edu.ups.clase.socio;
+import ec.edu.ups.clase.Socio;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author Estudiante
+ * Clase Controlador para el CRUD
+ * @author Jose Tapia
  */
 public class ControladorSocio {
-    private List<socio> lista;
+    private List<Socio> lista;
     private int contador=0;
 
     public ControladorSocio(){
         lista=new ArrayList<>();
     }
     
-    public void create(socio objeto){
+    public void create(Socio objeto){
         lista.set(contador, objeto);
         contador=contador+1;
-        //lista.add(objeto);
     }
     
-    public socio read(int codigo){
-        for(socio ControladorSocio : lista){
+    public Socio read(int codigo){
+        for(Socio ControladorSocio : lista){
             if (ControladorSocio.getCodigo()==codigo)
                 return ControladorSocio;
         }
         return null;
     }
     
-    public void update(socio objeto){
+    public void update(Socio objeto){
         for(int i=0; i<lista.size(); i++){
-            socio elemento=lista.get(i);
+            Socio elemento=lista.get(i);
             if(elemento.getCodigo()==objeto.getCodigo()){
                 lista.set(i, objeto);
                 break;
@@ -47,7 +46,7 @@ public class ControladorSocio {
     
     public void delete(int codigo){
         for(int i=0; i<lista.size(); i++){
-            socio elemento=lista.get(i);
+            Socio elemento=lista.get(i);
             if(elemento.getCodigo()==codigo){
                 lista.remove(i);
                 break;

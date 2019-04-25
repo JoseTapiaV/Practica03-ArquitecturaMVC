@@ -5,55 +5,57 @@
  */
 package ec.edu.ups.controlador;
 
-import ec.edu.ups.clase.empleado;
-import java.util.ArrayList;
-import java.util.List;
+import ec.edu.ups.clase.Empleado;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
- *
- * @author ASUS
+ * Clase Controlador para el CRUD
+ * @author Jose Tapia
  */
 public class ControladorEmpleado {
-     private List<empleado> lista;
+     private Set<Empleado> lista;
+     private int contador;
     
     public ControladorEmpleado(){
-        lista=new ArrayList<>();
+        lista=new HashSet<>();
+        contador=0;
     }
     
-    public void create(empleado objeto){
+    public void create(Empleado objeto){
+        contador++;
+        objeto.setCodigo(this.contador);
         lista.add(objeto);
     }
     
-    public empleado read(int codigo){
-        for(empleado ControladorEmpleado:lista){           
-            if (ControladorEmpleado.getCodigo()==codigo)
-                return ControladorEmpleado;
+    public Empleado read(int codigo){
+        for(Empleado empleado:lista){           
+            if (contador==empleado.getCodigo())
+                return empleado;
         }
         return null;
     }
     
-    public void update(empleado objeto){
-        for(int i=0; i<lista.size(); i++){
-            empleado elemento=lista.get(i);
-            if(elemento.equals(objeto)){
-                lista.set(i, objeto);
-                break;
-            }
+    public void update(Empleado objeto){
+        if(lista.contains(objeto))
+        {
+            lista.remove(objeto);
+            lista.add(objeto);
         }
     }
     
     public void delete(int codigo){
-        for(int i=0; i<lista.size(); i++){
-            empleado elemento=lista.get(i);
-            if(elemento.equals(elemento)){
-                lista.remove(elemento);
+        for(Empleado objeto : lista){
+            if(objeto.getCodigo() == codigo){
+                lista.remove(objeto);
                 break;
             }
         }
     }
     
-    public void ordenar(empleado objeto){
-        
+    public void imprimir(){
+        for (Empleado empleado : lista) {
+            System.out.println(empleado.getNombre());
+        }
     }
-    
 }

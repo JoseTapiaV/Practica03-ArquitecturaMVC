@@ -13,20 +13,20 @@ import ec.edu.ups.interfaces.Acciones;
  * @since 2019
  * @author Jose Tapia
  */
-public class directivo extends empresaZapato implements Acciones{
+public class Directivo extends EmpresaZapato implements Acciones{
     private int codigo;
     private String cedula;
     private double sueldo;
     private String direccion;
 
-    public directivo() {
+    public Directivo() {
     }
 
-    public directivo(String nombre, int codigo) {
+    public Directivo(String nombre, int codigo) {
         super(nombre, codigo);
     }
 
-    public directivo(String cedula, double sueldo, String direccion, String nombre, int codigo, double ingreso, String nacional) {
+    public Directivo(String cedula, double sueldo, String direccion, String nombre, int codigo, double ingreso, String nacional) {
         super(nombre, codigo, ingreso, nacional);
         this.cedula = cedula;
         this.sueldo = sueldo;

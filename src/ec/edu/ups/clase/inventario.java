@@ -13,20 +13,20 @@ import ec.edu.ups.interfaces.Acciones;
  * @since 2019
  * @author Jose Tapia
  */
-final public class inventario extends sucursal implements Acciones{
+final public class Inventario extends Sucursal implements Acciones{
     private String tipo;
     private int numeroComputador;
     private int numeroEmpleado;
     private int numeroCliente;
 
-    public inventario() {
+    public Inventario() {
     }
 
-    public inventario(String nombre, int codigo) {
+    public Inventario(String nombre, int codigo) {
         super(nombre, codigo);
     }
 
-    public inventario(String tipo, int numeroComputador, int numeroEmpleado, int numeroCliente, String direccion, int cantidad, int telefono, String ciudad, String nombre, int codigo, double ingreso, String nacional) {
+    public Inventario(String tipo, int numeroComputador, int numeroEmpleado, int numeroCliente, String direccion, int cantidad, int telefono, String ciudad, String nombre, int codigo, double ingreso, String nacional) {
         super(direccion, cantidad, telefono, ciudad, nombre, codigo, ingreso, nacional);
         this.tipo = tipo;
         this.numeroComputador = numeroComputador;

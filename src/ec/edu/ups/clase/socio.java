@@ -14,20 +14,20 @@ import java.util.Date;
  * @since 2019
  * @author Jose Tapia
  */
-final public class socio extends sucursal{
+final public class Socio extends Sucursal{
     private String rol;
     private Date integracion;
     private String manera;
     private int cod;
 
-    public socio() {
+    public Socio() {
     }
 
-    public socio(String nombre, int codigo) {
+    public Socio(String nombre, int codigo) {
         super(nombre, codigo);
     }
 
-    public socio(String rol, Date integracion, String manera, int cod, String direccion, int cantidad, int telefono, String ciudad, String nombre, int codigo, double ingreso, String nacional) {
+    public Socio(String rol, Date integracion, String manera, int cod, String direccion, int cantidad, int telefono, String ciudad, String nombre, int codigo, double ingreso, String nacional) {
         super(direccion, cantidad, telefono, ciudad, nombre, codigo, ingreso, nacional);
         this.rol = rol;
         this.integracion = integracion;
@@ -81,6 +81,6 @@ final public class socio extends sucursal{
         
     @Override
     public String toString() {
-        return "socio{" + "rol=" + rol + ", integracion=" + integracion + ", manera=" + manera + ", codigo=" + cod + '}';
+        return "Socio{" + "rol=" + rol + ", integracion=" + integracion + ", manera=" + manera + ", codigo=" + cod + '}';
     }
 }

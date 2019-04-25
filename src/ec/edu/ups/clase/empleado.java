@@ -13,20 +13,20 @@ import ec.edu.ups.interfaces.Acciones;
  * @since 2019
  * @author Jose Tapia
  */
-final public class empleado extends directivo{
+final public class Empleado extends Directivo{
     private String seccion;
     private int cantidad;
     private double horaEntrada;
     private double horaSalida;
 
-    public empleado() {
+    public Empleado() {
     }
 
-    public empleado(String nombre, int codigo) {
+    public Empleado(String nombre, int codigo) {
         super(nombre, codigo);
     }
 
-    public empleado(String seccion, int cantidad, double horaEntrada, double horaSalida, String cedula, double sueldo, String direccion, String nombre, int codigo, double ingreso, String nacional) {
+    public Empleado(String seccion, int cantidad, double horaEntrada, double horaSalida, String cedula, double sueldo, String direccion, String nombre, int codigo, double ingreso, String nacional) {
         super(cedula, sueldo, direccion, nombre, codigo, ingreso, nacional);
         this.seccion = seccion;
         this.cantidad = cantidad;
@@ -80,6 +80,6 @@ final public class empleado extends directivo{
 
     @Override
     public String toString() {
-        return "empleado{" + "seccion=" + seccion + ", cantidad=" + cantidad + ", horaEntrada=" + horaEntrada + ", horaSalida=" + horaSalida + '}';
+        return "Empleado{" + "seccion=" + seccion + ", cantidad=" + cantidad + ", horaEntrada=" + horaEntrada + ", horaSalida=" + horaSalida + '}';
     }   
 }

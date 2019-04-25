@@ -5,13 +5,13 @@
  */
 package ec.edu.ups.prueba;
 
-import ec.edu.ups.clase.directivo;
-import ec.edu.ups.clase.empleado;
-import ec.edu.ups.clase.empresaZapato;
-import ec.edu.ups.clase.inventario;
-import ec.edu.ups.clase.seccion;
-import ec.edu.ups.clase.socio;
-import ec.edu.ups.clase.sucursal;
+import ec.edu.ups.clase.Directivo;
+import ec.edu.ups.clase.Empleado;
+import ec.edu.ups.clase.EmpresaZapato;
+import ec.edu.ups.clase.Inventario;
+import ec.edu.ups.clase.Seccion;
+import ec.edu.ups.clase.Socio;
+import ec.edu.ups.clase.Sucursal;
 import java.util.GregorianCalendar;
 
 
