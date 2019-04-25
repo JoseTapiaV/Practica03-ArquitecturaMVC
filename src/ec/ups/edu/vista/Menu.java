@@ -22,7 +22,8 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 /**
  *
- * @author Estudiante
+ * Clase Menu en la cual se encuentra el programa principal
+ * @author Jose Tapia
  */
 public class Menu {
     public static void main(String []args)
